@@ -36,3 +36,17 @@ document.addEventListener('scroll', () => {
         }
     });
 });
+
+function confirmarRedireccion(){
+
+    const confirmar = confirm("¿Deseas ir a esta seccion?");
+
+    if (confirmar) {
+        alert("Espera, estas siendo redirigido a...");
+
+        window.location.href = "./src/about.html";
+        window.location.href = "./src/projects.html";
+        window.location.href = "./src/skill.html";
+        window.location.href = "./src/contact.html";
+    }
+}
