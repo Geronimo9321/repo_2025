@@ -51,3 +51,37 @@ function confirmarRedireccion(url) {
     }
     return false; // Evita la navegación automática si no se confirma
 }
+
+// 4. Insertar el footer automaticamente
+document.addEventListener("DOMContentLoaded", () => {
+    insertarFooter();
+    // Podés agregar aquí otros elementos como insertarNav() si lo necesitás
+});
+
+// Inserta el footer automáticamente con confirmación en los enlaces
+function insertarFooter() {
+    const footerHTML = `
+        <footer>
+            <p>&copy; 2025 Geronimo Ariel Franco.</p>
+            <div class="footer-links">
+                <a href="https://github.com/tu_usuario" onclick="return confirmarContacto(this.href)">GitHub</a>
+                <a href="https://linkedin.com/in/tu_usuario" onclick="return confirmarContacto(this.href)">LinkedIn</a>
+                <a href="mailto:tuemail@gmail.com" onclick="return confirmarContacto(this.href)">Gmail</a>
+            </div>
+        </footer>
+    `;
+
+    const footerContainer = document.getElementById("footer-principal");
+    if (footerContainer) {
+        footerContainer.innerHTML = footerHTML;
+    }
+}
+
+// Función de confirmación para los enlaces del footer
+function confirmarContacto(url) {
+    const confirmar = confirm("¿Contactarte con Geronimo?");
+    if (confirmar) {
+        window.location.href = url;
+    }
+    return false;
+}
