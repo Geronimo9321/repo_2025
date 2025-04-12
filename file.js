@@ -1,17 +1,22 @@
-// 1. Desplazamiento suave al hacer clic en los enlaces del menú de navegación
+// 1. Desplazamiento suave solo para anclas internas
 document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        // Aplica solo si es un enlace interno (#)
+        if (href.startsWith('#')) {
+            e.preventDefault();
 
-        // Selecciona el destino al que se quiere desplazar
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
 
-        // Desplazamiento suave
-        window.scrollTo({
-            top: targetElement.offsetTop - 50, // Ajustar el desplazamiento para compensar el header
-            behavior: 'smooth'
-        });
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50,
+                    behavior: 'smooth'
+                });
+            }
+        }
     });
 });
 
@@ -37,16 +42,12 @@ document.addEventListener('scroll', () => {
     });
 });
 
-function confirmarRedireccion(){
-
-    const confirmar = confirm("¿Deseas ir a esta seccion?");
-
+// 3. Confirmación de redirección
+function confirmarRedireccion(url) {
+    const confirmar = confirm("¿Deseas ir a esta sección?");
     if (confirmar) {
-        alert("Espera, estas siendo redirigido a...");
-
-        window.location.href = "./src/about.html";
-        window.location.href = "./src/projects.html";
-        window.location.href = "./src/skill.html";
-        window.location.href = "./src/contact.html";
+        alert("Espera, estás siendo redirigido a...");
+        window.location.href = url;
     }
+    return false; // Evita la navegación automática si no se confirma
 }
