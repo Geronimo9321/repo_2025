@@ -240,3 +240,40 @@ footer {
     font-size: 16px;
     color: #333;
 }
+
+#main-content h1 {
+    text-align: center;        /* Centra horizontalmente el texto */
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#main-content p {
+    text-align: center;       /* Justifica el contenido del párrafo */
+    max-width: 800px;          /* Limita el ancho para una mejor lectura */
+    margin: 0 auto 30px auto;  /* Centra el párrafo y da espacio debajo */
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-item h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+.contact-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
