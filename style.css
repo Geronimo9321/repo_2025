@@ -1,3 +1,8 @@
+/* Justificar todos los párrafos */
+p {
+    text-align: justify;
+}
+
 /* Estilo básico para el cuerpo de la página */
 body {
     font-family: Arial, sans-serif;
@@ -21,6 +26,7 @@ header h1 {
 
 header p {
     font-size: 18px;
+    text-align: center;
 }
 
 /* Navegación */
@@ -242,21 +248,20 @@ footer {
 }
 
 #main-content h1 {
-    text-align: center;        /* Centra horizontalmente el texto */
+    text-align: center;
     line-height: 1.6;
     color: #333;
     margin-bottom: 20px;
 }
 
 #main-content p {
-    text-align: center;       /* Justifica el contenido del párrafo */
-    max-width: 800px;          /* Limita el ancho para una mejor lectura */
-    margin: 0 auto 30px auto;  /* Centra el párrafo y da espacio debajo */
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
     font-size: 16px;
     color: #333;
     line-height: 1.6;
 }
-
 
 .contact-methods {
     display: flex;
